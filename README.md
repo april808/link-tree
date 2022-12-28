@@ -13,3 +13,4 @@ GitHub:
 1. 自主開發設計。
 1. 使用不同的 font-awesome 作法。
 1. 實作CSS Selectors 根據連結關鍵字套用偽類icon。
+1. 自適應連結清單 navbar。
