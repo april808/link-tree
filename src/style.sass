@@ -1,0 +1,172 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css')
+// BREAK WIDTH(響應適 螢幕寬度－分段)
+$break_large: 1280px
+$break_medium: 768px
+$break_small: 480px
+
+// ---小於480px
+@mixin mobile
+  @media screen and (max-width: $break_small)
+    @content
+// ---小於768px
+@mixin pad
+  @media screen and (max-width: $break_medium)
+    @content
+// ---小於1280px
+@mixin pc
+  @media screen and (max-width: $break_large)
+    @content
+// --------
+@mixin size($w,$h:$w)
+  width: $w
+  height: $h
+  
+@mixin flex
+  display: flex
+  justify-content: center
+  align-items: center
+  
+@mixin abpos($l:initial,$t:initial)
+  position: absolute
+  left: $l
+  top: $t
+  
+*
+  // border: 1px solid #fff
+
+html,body
+  background-color: rgba(black,0.8)
+  font-family: Microsoft JhengHei
+  margin: 0
+  padding: 0
+.wrap
+  +flex
+  flex-direction: column
+  width: 100vw
+  .profile
+    margin-bottom: 10px
+    img
+      border-radius: 50%
+      object-fit: cover
+      +size(100px)
+  .links
+    width: 100%
+    box-sizing: border-box
+    padding: 10px 30px
+    ul
+      @include pad
+        flex-direction: column
+      +flex
+      margin: 0
+      padding: 0
+      list-style-type: none
+      li
+        @include pad
+          width: 100%
+        +flex
+        margin: 0 5px
+      a
+        box-sizing: border-box
+        text-decoration: none
+        width: inherit
+        flex: 1
+        padding: 10px 20px
+        border: 1px solid lightSeaGreen
+        // background-color: rgba(lightSeaGreen,0.5)
+        border-radius: 8px
+        margin-bottom: 5px
+        transition: 0.5s
+        i
+          margin-right: 10px
+        &:link
+          color: lightSeaGreen
+          background-color: transparent 
+          // text-decoration: none
+        &:visited
+          color: pink
+          background-color: transparent
+          // text-decoration: none
+        &:hover
+          background-color: rgba(white,1)
+          opacity: 0.9
+          border-width: 3px
+          color: rgba(black,0.8)
+          transform: scale(1.05)
+          &::before
+            color: lightSeaGreen
+        &:active
+          color: yellow
+          // background-color: transparent
+          transform: scale(0.9)
+        &::before
+          display: inline-block
+          font-style: normal
+          font-variant: normal
+          text-rendering: auto
+          -webkit-font-smoothing: antialiased
+        
+          // font-family: "Font Awesome 5 Free"
+          // font-family: "Font Awesome 5 Pro"
+          font-family: "Font Awesome 5 Brands"
+          font-weight: 900
+          font-size: 1em
+          color: white
+          text-align: center
+          margin-right: 10px
+        &[href*="codepen.io"]
+          &::before
+            content: "\f1cb"
+        &[href*="github.com"]
+          &::before
+            content: "\f09b"
+        &[href*="twitter.com"]
+          &::before
+            content: "\f099"
+        &[href*="facebook.com"]
+          &::before
+            content: "\f09a"
+        &[href*="instagram.com"]
+          &::before
+            content: "\f16d"
+        &[href*="live"]
+          &::before
+            display: inline-block
+            content: ""
+            background-image: url(https://april808.github.io/blog_website/assets/image/logo/MyLogo.vectornator1.svg)
+            +size(1em)
+            background-size: cover
+            border-radius: 50%
+            vertical-align: middle
+            transform: translateY(-2px)
+        &::after
+          content: attr(web-name)
+        
+  
+.allstars
+  pointer-events: none
+  +size(100%)
+  +abpos(0,0)
+  
+  @keyframes falling
+    0%,100%
+      opacity: 0
+    70%
+      opacity: 1
+    0%
+      transform: translate(100px,0)
+    100%
+      transform: translate(0px,200px)
+  
+  [class^='star']
+    background-color: #fff
+    +size(3px,3px)
+    border-radius: 50%
+    animation: falling 2s infinite
+    
+  @for $i from 1 through 30
+    .star#{$i}
+      $poX: random()*100%
+      $poY: random()*-80%+50%
+      +abpos($poX,$poY)
+      animation: 
+        delay: $i*-0.1s
