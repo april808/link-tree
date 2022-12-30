@@ -1,35 +1,40 @@
 @charset "UTF-8";
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css");
 html, body {
-  background-color: rgba(0, 0, 0, 0.8);
+  background-image: linear-gradient(to top, rgba(130, 233, 227, 0.2) 0%, rgba(28, 156, 149, 0.3) 100%);
   font-family: Microsoft JhengHei;
   margin: 0;
   padding: 0;
 }
 
-.wrap {
+.top-nav {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   width: 100vw;
 }
-.wrap .profile {
+.top-nav .profile {
   margin-bottom: 10px;
 }
-.wrap .profile img {
+.top-nav .profile img {
   border-radius: 50%;
   -o-object-fit: cover;
      object-fit: cover;
   width: 100px;
   height: 100px;
 }
-.wrap .links {
+.top-nav .LinkList {
   width: 100%;
   box-sizing: border-box;
   padding: 10px 30px;
 }
-.wrap .links ul {
+@media screen and (max-width: 768px) {
+  .top-nav .LinkList {
+    padding: 10px 0px;
+  }
+}
+.top-nav .LinkList ul {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -38,58 +43,61 @@ html, body {
   list-style-type: none;
 }
 @media screen and (max-width: 768px) {
-  .wrap .links ul {
+  .top-nav .LinkList ul {
     flex-direction: column;
   }
 }
-.wrap .links ul li {
+.top-nav .LinkList ul li {
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 0 5px;
 }
 @media screen and (max-width: 768px) {
-  .wrap .links ul li {
-    width: 100%;
+  .top-nav .LinkList ul li {
+    min-width: 500px;
+    margin-bottom: 3px;
+    width: calc(80% - 30px);
   }
 }
-.wrap .links ul a {
-  box-sizing: border-box;
+@media screen and (max-width: 480px) {
+  .top-nav .LinkList ul li {
+    min-width: 300px;
+  }
+}
+.top-nav .LinkList ul li a {
   text-decoration: none;
-  width: inherit;
+  width: 100%;
   flex: 1;
   padding: 10px 20px;
   border: 1px solid lightSeaGreen;
+  background-color: rgba(32, 178, 170, 0.7);
+  color: #fff;
+  font-weight: bold;
   border-radius: 8px;
   margin-bottom: 5px;
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.3);
   transition: 0.5s;
 }
-.wrap .links ul a i {
+.top-nav .LinkList ul li a i {
   margin-right: 10px;
 }
-.wrap .links ul a:link {
-  color: lightSeaGreen;
-  background-color: transparent;
-}
-.wrap .links ul a:visited {
-  color: pink;
-  background-color: transparent;
-}
-.wrap .links ul a:hover {
+.top-nav .LinkList ul li a:hover {
   background-color: white;
   opacity: 0.9;
   border-width: 3px;
   color: rgba(0, 0, 0, 0.8);
   transform: scale(1.05);
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.3);
 }
-.wrap .links ul a:hover::before {
+.top-nav .LinkList ul li a:hover::before {
   color: lightSeaGreen;
 }
-.wrap .links ul a:active {
+.top-nav .LinkList ul li a:active {
   color: yellow;
   transform: scale(0.9);
 }
-.wrap .links ul a::before {
+.top-nav .LinkList ul li a::before {
   display: inline-block;
   font-style: normal;
   font-variant: normal;
@@ -102,25 +110,25 @@ html, body {
   text-align: center;
   margin-right: 10px;
 }
-.wrap .links ul a[href*="codepen.io"]::before {
+.top-nav .LinkList ul li a[href*="codepen.io"]::before {
   content: "";
 }
-.wrap .links ul a[href*="github.com"]::before {
+.top-nav .LinkList ul li a[href*="github.com"]::before {
   content: "";
 }
-.wrap .links ul a[href*="twitter.com"]::before {
+.top-nav .LinkList ul li a[href*="twitter.com"]::before {
   content: "";
 }
-.wrap .links ul a[href*="facebook.com"]::before {
+.top-nav .LinkList ul li a[href*="facebook.com"]::before {
   content: "";
 }
-.wrap .links ul a[href*="instagram.com"]::before {
+.top-nav .LinkList ul li a[href*="instagram.com"]::before {
   content: "";
 }
-.wrap .links ul a[href*=live]::before {
+.top-nav .LinkList ul li a[href*=live]::before {
   display: inline-block;
   content: "";
-  background-image: url(https://april808.github.io/blog_website/assets/image/logo/MyLogo.vectornator1.svg);
+  background-image: url("https://april808.github.io/blog_website/assets/image/logo/MyLogo.vectornator1.svg");
   width: 1em;
   height: 1em;
   background-size: cover;
@@ -128,7 +136,7 @@ html, body {
   vertical-align: middle;
   transform: translateY(-2px);
 }
-.wrap .links ul a::after {
+.top-nav .LinkList ul li a::after {
   content: attr(web-name);
 }
 
@@ -175,214 +183,215 @@ html, body {
   border-radius: 50%;
   -webkit-animation: falling 2s infinite;
           animation: falling 2s infinite;
+  margin: 160px;
 }
 .allstars .star1 {
   position: absolute;
-  left: 76.7082226375%;
-  top: 16.1239574624%;
+  left: 31.427310072%;
+  top: 47.3793297539%;
   -webkit-animation-delay: -0.1s;
           animation-delay: -0.1s;
 }
 .allstars .star2 {
   position: absolute;
-  left: 58.6153970834%;
-  top: -5.8295795765%;
+  left: 42.6189765069%;
+  top: 10.5692622974%;
   -webkit-animation-delay: -0.2s;
           animation-delay: -0.2s;
 }
 .allstars .star3 {
   position: absolute;
-  left: 5.547674413%;
-  top: -29.7537684243%;
+  left: 68.6621882484%;
+  top: -3.2891254789%;
   -webkit-animation-delay: -0.3s;
           animation-delay: -0.3s;
 }
 .allstars .star4 {
   position: absolute;
-  left: 6.5791453415%;
-  top: 18.0715046614%;
+  left: 3.9485874207%;
+  top: -11.2661005575%;
   -webkit-animation-delay: -0.4s;
           animation-delay: -0.4s;
 }
 .allstars .star5 {
   position: absolute;
-  left: 15.2020985466%;
-  top: -12.5687878406%;
+  left: 68.2870639546%;
+  top: 23.0936116136%;
   -webkit-animation-delay: -0.5s;
           animation-delay: -0.5s;
 }
 .allstars .star6 {
   position: absolute;
-  left: 79.4798713837%;
-  top: -29.413818878%;
+  left: 33.5353314452%;
+  top: 26.6498816289%;
   -webkit-animation-delay: -0.6s;
           animation-delay: -0.6s;
 }
 .allstars .star7 {
   position: absolute;
-  left: 96.1340831515%;
-  top: -5.9176654939%;
+  left: 50.3311050046%;
+  top: -29.074602069%;
   -webkit-animation-delay: -0.7s;
           animation-delay: -0.7s;
 }
 .allstars .star8 {
   position: absolute;
-  left: 20.5318661614%;
-  top: 36.4410704256%;
+  left: 30.9915582126%;
+  top: -0.5117982014%;
   -webkit-animation-delay: -0.8s;
           animation-delay: -0.8s;
 }
 .allstars .star9 {
   position: absolute;
-  left: 31.7088809435%;
-  top: 25.096490126%;
+  left: 84.1308750837%;
+  top: 29.4560077619%;
   -webkit-animation-delay: -0.9s;
           animation-delay: -0.9s;
 }
 .allstars .star10 {
   position: absolute;
-  left: 79.7838354378%;
-  top: 8.9053701633%;
+  left: 0.2090803219%;
+  top: 18.203687865%;
   -webkit-animation-delay: -1s;
           animation-delay: -1s;
 }
 .allstars .star11 {
   position: absolute;
-  left: 83.2680415915%;
-  top: 48.5042818834%;
+  left: 4.7911902419%;
+  top: 12.675705274%;
   -webkit-animation-delay: -1.1s;
           animation-delay: -1.1s;
 }
 .allstars .star12 {
   position: absolute;
-  left: 91.8475626761%;
-  top: 36.3953628709%;
+  left: 90.339009415%;
+  top: 27.4750048282%;
   -webkit-animation-delay: -1.2s;
           animation-delay: -1.2s;
 }
 .allstars .star13 {
   position: absolute;
-  left: 41.9969781164%;
-  top: 31.129702119%;
+  left: 25.4481737844%;
+  top: -6.9178821372%;
   -webkit-animation-delay: -1.3s;
           animation-delay: -1.3s;
 }
 .allstars .star14 {
   position: absolute;
-  left: 44.8841352434%;
-  top: 15.5548768096%;
+  left: 35.3841726555%;
+  top: 12.1915853305%;
   -webkit-animation-delay: -1.4s;
           animation-delay: -1.4s;
 }
 .allstars .star15 {
   position: absolute;
-  left: 2.2905416856%;
-  top: 13.3854615149%;
+  left: 50.3144814097%;
+  top: 1.8458474547%;
   -webkit-animation-delay: -1.5s;
           animation-delay: -1.5s;
 }
 .allstars .star16 {
   position: absolute;
-  left: 91.2400411313%;
-  top: -3.0299773097%;
+  left: 41.4577317881%;
+  top: 2.6870227804%;
   -webkit-animation-delay: -1.6s;
           animation-delay: -1.6s;
 }
 .allstars .star17 {
   position: absolute;
-  left: 74.078381453%;
-  top: 22.4366921033%;
+  left: 29.3026410477%;
+  top: -8.7995163719%;
   -webkit-animation-delay: -1.7s;
           animation-delay: -1.7s;
 }
 .allstars .star18 {
   position: absolute;
-  left: 71.6226405329%;
-  top: -14.7861726694%;
+  left: 97.2048547651%;
+  top: 26.403448673%;
   -webkit-animation-delay: -1.8s;
           animation-delay: -1.8s;
 }
 .allstars .star19 {
   position: absolute;
-  left: 37.4837955051%;
-  top: -15.0850403336%;
+  left: 28.7353906587%;
+  top: 35.0655696612%;
   -webkit-animation-delay: -1.9s;
           animation-delay: -1.9s;
 }
 .allstars .star20 {
   position: absolute;
-  left: 9.8080446544%;
-  top: 18.1099593559%;
+  left: 48.7063852977%;
+  top: -9.794560747%;
   -webkit-animation-delay: -2s;
           animation-delay: -2s;
 }
 .allstars .star21 {
   position: absolute;
-  left: 52.5441176938%;
-  top: 11.6075738778%;
+  left: 95.7397040555%;
+  top: -19.9784980237%;
   -webkit-animation-delay: -2.1s;
           animation-delay: -2.1s;
 }
 .allstars .star22 {
   position: absolute;
-  left: 94.0980354624%;
-  top: 45.6492854464%;
+  left: 92.936988618%;
+  top: 41.8976439675%;
   -webkit-animation-delay: -2.2s;
           animation-delay: -2.2s;
 }
 .allstars .star23 {
   position: absolute;
-  left: 93.986588109%;
-  top: 13.1241108256%;
+  left: 95.4102996869%;
+  top: 43.2736702102%;
   -webkit-animation-delay: -2.3s;
           animation-delay: -2.3s;
 }
 .allstars .star24 {
   position: absolute;
-  left: 32.7482492726%;
-  top: 20.549635799%;
+  left: 66.1755231182%;
+  top: -23.1032236592%;
   -webkit-animation-delay: -2.4s;
           animation-delay: -2.4s;
 }
 .allstars .star25 {
   position: absolute;
-  left: 50.3247231997%;
-  top: 43.4150675116%;
+  left: 42.717478324%;
+  top: 39.6255724593%;
   -webkit-animation-delay: -2.5s;
           animation-delay: -2.5s;
 }
 .allstars .star26 {
   position: absolute;
-  left: 10.267249806%;
-  top: 33.8280191639%;
+  left: 34.6859819038%;
+  top: 14.9813464313%;
   -webkit-animation-delay: -2.6s;
           animation-delay: -2.6s;
 }
 .allstars .star27 {
   position: absolute;
-  left: 32.9109961693%;
-  top: 28.3515851506%;
+  left: 2.1634478629%;
+  top: 14.0028661187%;
   -webkit-animation-delay: -2.7s;
           animation-delay: -2.7s;
 }
 .allstars .star28 {
   position: absolute;
-  left: 58.7456353092%;
-  top: 5.0593618524%;
+  left: 29.3072756855%;
+  top: 36.7200396952%;
   -webkit-animation-delay: -2.8s;
           animation-delay: -2.8s;
 }
 .allstars .star29 {
   position: absolute;
-  left: 85.4183679596%;
-  top: 8.8028413637%;
+  left: 46.0428685587%;
+  top: 33.6980260096%;
   -webkit-animation-delay: -2.9s;
           animation-delay: -2.9s;
 }
 .allstars .star30 {
   position: absolute;
-  left: 19.9189783285%;
-  top: -15.2739210569%;
+  left: 66.8654187454%;
+  top: 33.5905791464%;
   -webkit-animation-delay: -3s;
           animation-delay: -3s;
 }
