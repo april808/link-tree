@@ -1,20 +1,21 @@
 // 使用不同的font-awesome 作法
-.top-nav
+.top-nav.pre-rehearsal
   .profile
     img(
       src="https://april808.github.io/blog_website/assets/image/logo/MyLogo.vectornator1.svg",
       alt="MyLogo"
     )
-  div
-    input#addcss(type="checkbox" onclick="toggleblack();", name="切換黑色" checked)
+  .togglechk
+    //- input#addcss(type="checkbox" onload="toggleblack(this)", name="切換黑色" checked)
+    input#addcss(type="checkbox" onclick="toggleblack(this);", name="切換黑色")
     label(for="addcss") 切換
-  .LinkList
+  .LinkList.start-ani
     ul
       li
         a(href="https://codepen.io/april808" target="_blank" web-name="Codepen") 
       li
         a(href="https://github.com/april808" target="_blank" web-name="Github") 
-      hr
+      //- hr
       li
         a(href="https://twitter.com/home" target="_blank" web-name="Twitter") 
       li
@@ -23,15 +24,8 @@
         a(href="https://www.instagram.com" target="_blank" web-name="Instagram") 
       li
         a(href="https://codepen.io/april808/live/MWBKqyv" target="_blank" web-name="April808") 
-      hr
-      li
-        a(href="#") 
-          i.fa-brands.fa-codepen
-          span 123
-      li
-        a(href="#") 
-          i.fa-brands.fa-github
-          span 123
+      //- hr
+      
 .allstars
   .star1 
   .star2 

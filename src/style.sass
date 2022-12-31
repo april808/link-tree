@@ -174,8 +174,46 @@ html,body
         background: rgba(lightSeaGreen,0.7)
         &::before
           color: #fff
-          
-          
+// 進場動畫
+@keyframes ani
+  0%
+    opacity: 0
+    transform: translateY(150px) scale(0)
+  100%
+    opacity: 1
+    transform: translateY(0px) scale(1)
+  
+.profile
+  animation: ani 2s 1
+  transition-timing-function: ease-out
+  
+.togglechk
+  opacity: 1
+  transition: 1.8s
+  
+.start-ani.LinkList ul > li
+    & a
+      transition: 1s
+      transition-timing-function: ease-out
+      transform: translateY(0px) scale(1)
+      opacity: 1
+    
+  
+.start-ani.LinkList ul > li
+  @for $i from 1 through 8
+    &:nth-child(#{$i})
+      a
+        transition-delay: $i*0.2+0.5s 
+    
+.pre-rehearsal
+  & .togglechk,.profile
+    opacity: 0
+    transform: translateY(80px) scale(0)
+  & .LinkList ul > li
+    & a
+        transform: translateY(30px) scale(0)
+  
+// 星星動畫                
 .allstars
   pointer-events: none
   +size(100%)
