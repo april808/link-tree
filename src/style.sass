@@ -20,7 +20,10 @@ $break_small: 480px
     
     
 // --------
-$colorBg: linear-gradient(to top, rgba(lighten(lightSeaGreen,30),0.2) 0%, rgba(darken(lightSeaGreen,5),0.3) 100%)
+$colorBg: linear-gradient(to top, rgba(lighten(lightSeaGreen,30),0.2) 0%, rgba(darken(lightSeaGreen,5),0.3) 100%), white
+
+
+$color_black: rgba(black,0.8)
 // --------
 @mixin size($w,$h:$w)
   width: $w
@@ -40,14 +43,16 @@ $colorBg: linear-gradient(to top, rgba(lighten(lightSeaGreen,30),0.2) 0%, rgba(d
   // border: 1px solid #000
 
 html,body
-  background-image: $colorBg
   font-family: Microsoft JhengHei
   margin: 0
   padding: 0
+  background-color: rgba(black,0.8)
 .top-nav
   +flex
   flex-direction: column
   width: 100vw
+  background: $colorBg
+  transition: background 0.7s
   .profile
     margin-bottom: 10px
     img
@@ -58,6 +63,7 @@ html,body
     width: 100%
     box-sizing: border-box
     padding: 10px 30px
+    transition: background 0.7s
     @include pad
       padding: 10px 0px
     ul
@@ -82,13 +88,13 @@ html,body
           flex: 1
           padding: 10px 20px
           border: 1px solid lightSeaGreen
-          background-color: rgba(lightSeaGreen,0.7)
-          color: #fff
+          background: rgba(lightSeaGreen,0.7)
+          color: rgba(white,0.8)
           font-weight: bold
           border-radius: 8px
           margin-bottom: 5px
           box-shadow: 0px 3px 3px rgba(black,0.3)
-          transition: 0.5s
+          transition: background 0.5s, color 0.5s,border 0.5s,transform 0.5s
           i
             margin-right: 10px
           &:link
@@ -124,7 +130,7 @@ html,body
             font-family: "Font Awesome 5 Brands"
             font-weight: 900
             font-size: 1em
-            color: white
+            color: currentcolor
             text-align: center
             margin-right: 10px
           &[href*="codepen.io"]
@@ -155,7 +161,21 @@ html,body
           &::after
             content: attr(web-name)
         
-  
+.blackstyle
+  background: $color_black
+  .LinkList
+    background-color: rgba(white,0.7)
+    ul li a
+      // background: transparent
+      background: rgba(white,0.8)
+      color: #000
+      &:hover
+        color: rgba(white,0.8)
+        background: rgba(lightSeaGreen,0.7)
+        &::before
+          color: #fff
+          
+          
 .allstars
   pointer-events: none
   +size(100%)
