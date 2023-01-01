@@ -49,13 +49,13 @@ html,body
   margin: 0
   padding: 0
   background-color: rgba(black,0.8)
-
+  
+.wrap
+  position: relative
 .top-nav 
   +flex
   flex-direction: column
   width: 100%
-  height: auto
-  margin: 0
   //background: $colorBg
   background: $color_white
   transition: background 0.7s
@@ -299,6 +299,7 @@ html,body
 // 星星動畫                
 .allstars
   pointer-events: none
+  overflow: hidden
   +size(100%)
   +abpos(0,0)
   
