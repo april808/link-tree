@@ -50,108 +50,85 @@ html,body
   padding: 0
   background-color: rgba(black,0.8)
 
-.top
-  border: 1px solid #000
-  position: relative
+.top-nav 
   +flex
   flex-direction: column
   width: 100%
-  overflow: hidden
-  .cover
-    background-image: url(https://images.unsplash.com/photo-1644212951958-ff6effbeff9b?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzI0NjU4NjQ&ixlib=rb-4.0.3&q=80)
-    background-size: 160%
-    background-position: center
-    background-repeat: no-repeat
-    width: 100%
-    height: 260px
-    // border: 1px solid #000
-    border: 0px solid gold
-    transition: 3.5s
-    // background-color: orange
-  .profile
-    top: 20px
-    margin-top: -60px
-    margin-bottom: 40px
-    // border: 1px solid #000
-    +size(700px,200px)
-    // border-radius: 50%
-    border-radius: 50% 50% 0 0
-    position: relative
-    +flex
-    // background-color: #fff
-    // background: linear-gradient(to top, rgba(lighten(lightSeaGreen,30),0.2) 0%, rgba(darken(lightSeaGreen,5),0.3) 100%), white
-    background: $color_white
-    background-size: 100% 200%
-    background-position: 0 -30px
-    &:before
-      opacity: 1
-      transition: 0.7s
-      transform: translateY(0px) scale(1)
-      content: ''
-      display: block
-      +size(100px)
-      position: absolute
-      top: 0
-      transform: translate(0%,-50%)
-      border: 18px solid gold
-      background: gold
-      border-radius: 50%
-    img
-      z-index: 99
-      margin-top: -200px
-      border-radius: 50%
-      object-fit: cover
-      +size(100px)
-      // animation: spin 3s infinite linear
-      // transform-origin: 50% 75px
-    @keyframes spin
-      to
-        transform: rotate(1turn)
-  .info
-    position: absolute
-    top: 65%
-    & h3,h5
-      margin: 0
-      padding: 0
-      overflow: hidden
-    & h3 
-      margin-bottom: 12px
-      font-size: 30px
-    & h5 
-      font-size: 18px
-    & span 
-        position: relative
-        top: 0px
-        transition: top 3s
-    +flex
-    flex-direction: column
-    
-.pre-rehearsal
-  .top
-    .cover
-      background-size: 120%
-      // &:before
-      // content: ''
-      // display: block
-      +size(100px)
-      // position: absolute
-      // top: 0
-      transform: translate(0%,-50%)
-      border-width: 18px
-      background: gold
-      border-radius: 50%
-    .info
-      & span
-        top: 1.2em
-.top-nav
-  +flex
-  flex-direction: column
-  // width: 100vw
+  height: auto
+  margin: 0
   //background: $colorBg
   background: $color_white
   transition: background 0.7s
+  .top
+    // border: 1px solid #000
+    position: relative
+    +flex
+    flex-direction: column
+    width: inherit
+    overflow: hidden
+    .cover
+      background-image: url(https://images.unsplash.com/photo-1644212951958-ff6effbeff9b?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzI0NjU4NjQ&ixlib=rb-4.0.3&q=80)
+      background-size: 160%
+      background-position: center
+      background-repeat: no-repeat
+      width: inherit
+      height: 260px
+      border: 0px solid gold
+      transition: 3.5s
+    .profile
+      top: 20px
+      margin-top: -60px
+      margin-bottom: 40px
+      +size(700px,200px)
+      border-radius: 50% 50% 0 0
+      position: relative
+      +flex
+      // background: linear-gradient(to top, rgba(lighten(lightSeaGreen,30),0.2) 0%, rgba(darken(lightSeaGreen,5),0.3) 100%), white
+      background: $color_white
+      background-size: 100% 200%
+      background-position: 0 -30px
+      &:before
+        opacity: 1
+        transition: 0.7s
+        transform: translateY(0px) scale(1)
+        content: ''
+        display: block
+        +size(100px)
+        position: absolute
+        top: 0
+        transform: translate(0%,-50%)
+        border: 18px solid gold
+        background: gold
+        border-radius: 50%
+      img
+        z-index: 99
+        margin-top: -200px
+        border-radius: 50%
+        object-fit: cover
+        +size(100px)
+    .info
+      position: absolute
+      top: 65%
+      & h3,h5
+        margin: 0
+        padding: 0
+        overflow: hidden
+      & h3 
+        margin-bottom: 12px
+        font-size: 30px
+      & h5 
+        font-weight: normal
+        font-size: 18px
+      & span 
+          position: relative
+          top: 0px
+          transition: top 3s
+      +flex
+      flex-direction: column
+
+.top-nav
   .LinkList
-    width: 100%
+    width: inherit
     box-sizing: border-box
     padding: 10px 30px
     transition: background 0.7s
@@ -207,7 +184,6 @@ html,body
               color: lightSeaGreen
           &:active
             color: yellow
-            // background-color: transparent
             transform: scale(0.9)
           &::before
             display: inline-block
@@ -215,8 +191,6 @@ html,body
             font-variant: normal
             text-rendering: auto
             -webkit-font-smoothing: antialiased
-
-
             font-family: "Font Awesome 5 Brands"
             font-weight: 900
             font-size: 1em
@@ -250,7 +224,7 @@ html,body
               transform: translateY(-2px)
           &::after
             content: attr(web-name)
-        
+// 切換成黑色
 .blackstyle
   background: $color_black
   .LinkList
@@ -264,6 +238,8 @@ html,body
         background: rgba(lightSeaGreen,0.7)
         &::before
           color: #fff
+      &:active
+        color: yellow
 // 進場動畫
 @keyframes ani
   0%
@@ -295,7 +271,20 @@ html,body
       a
         transition-delay: $i*0.2+0.5s 
     
+    
+        
 .pre-rehearsal
+  .top
+    .cover
+      background-size: 120%
+      +size(100px)
+      transform: translate(0%,-50%)
+      border-width: 18px
+      background: gold
+      border-radius: 50%
+    .info
+      & span
+        top: 1.2em
   & .togglechk,.profile
     opacity: 0
     transform: translateY(80px) scale(0)
