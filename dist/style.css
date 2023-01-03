@@ -7,10 +7,6 @@ html, body {
   background-color: rgba(0, 0, 0, 0.8);
 }
 
-.wrap {
-  position: relative;
-}
-
 .top-nav {
   display: flex;
   justify-content: center;
@@ -18,7 +14,6 @@ html, body {
   flex-direction: column;
   width: 100%;
   background: #cee8e6;
-  transition: background 0.7s;
 }
 .top-nav .top {
   position: relative;
@@ -86,7 +81,7 @@ html, body {
   align-items: center;
   flex-direction: column;
 }
-.top-nav .top .info h3, .top-nav .top .info h5 {
+.top-nav .top .info :is(h3,h5) {
   margin: 0;
   padding: 0;
   overflow: hidden;
@@ -222,24 +217,30 @@ html, body {
   content: attr(web-name);
 }
 
-.blackstyle {
-  background: rgba(0, 0, 0, 0.8);
+.top-nav:has(input[type=checkbox]:checked) {
+  background: #0f0f0f;
 }
-.blackstyle .LinkList {
+.top-nav:has(input[type=checkbox]:checked) .profile {
+  background: #0f0f0f;
+}
+.top-nav:has(input[type=checkbox]:checked) .info, .top-nav:has(input[type=checkbox]:checked) .togglechk {
+  color: #cee8e6;
+}
+.top-nav:has(input[type=checkbox]:checked) .LinkList {
   background-color: rgba(255, 255, 255, 0.7);
 }
-.blackstyle .LinkList ul li a {
+.top-nav:has(input[type=checkbox]:checked) .LinkList li > a {
   background: rgba(255, 255, 255, 0.8);
   color: #000;
 }
-.blackstyle .LinkList ul li a:hover {
+.top-nav:has(input[type=checkbox]:checked) .LinkList li > a:hover {
   color: rgba(255, 255, 255, 0.8);
   background: rgba(32, 178, 170, 0.7);
 }
-.blackstyle .LinkList ul li a:hover::before {
+.top-nav:has(input[type=checkbox]:checked) .LinkList li > a:hover::before {
   color: #fff;
 }
-.blackstyle .LinkList ul li a:active {
+.top-nav:has(input[type=checkbox]:checked) .LinkList li > a:active {
   color: yellow;
 }
 
@@ -264,15 +265,20 @@ html, body {
     transform: translateY(0px) scale(1);
   }
 }
-.profile img {
+.wrap {
+  position: relative;
+}
+.wrap :is(.top-nav ,.profile) {
+  transition: background 0.7s;
+}
+.wrap .profile > img {
   -webkit-animation: ani 3s 1;
           animation: ani 3s 1;
   transition-timing-function: ease-in;
 }
-
-.togglechk {
+.wrap .togglechk {
   opacity: 1;
-  transition: 1.8s;
+  transition: transform 1.8s;
 }
 
 .start-ani.LinkList ul > li a {
@@ -316,10 +322,10 @@ html, body {
   background: gold;
   border-radius: 50%;
 }
-.pre-rehearsal .top .info span {
+.pre-rehearsal .top .info > span {
   top: 1.2em;
 }
-.pre-rehearsal .togglechk, .pre-rehearsal .profile {
+.pre-rehearsal :is(.togglechk,.profile) {
   opacity: 0;
   transform: translateY(80px) scale(0);
 }
@@ -379,211 +385,211 @@ html, body {
 }
 .allstars .star1 {
   position: absolute;
-  left: 42.8333801406%;
-  top: -18.3475623075%;
+  left: 30.0360484517%;
+  top: 37.6743647601%;
   -webkit-animation-delay: -0.1s;
           animation-delay: -0.1s;
 }
 .allstars .star2 {
   position: absolute;
-  left: 64.6366010456%;
-  top: 15.2627301726%;
+  left: 87.78058556%;
+  top: 25.6533860012%;
   -webkit-animation-delay: -0.2s;
           animation-delay: -0.2s;
 }
 .allstars .star3 {
   position: absolute;
-  left: 31.3048394956%;
-  top: 36.7903863791%;
+  left: 54.7985418907%;
+  top: -7.708063759%;
   -webkit-animation-delay: -0.3s;
           animation-delay: -0.3s;
 }
 .allstars .star4 {
   position: absolute;
-  left: 71.0402145264%;
-  top: 47.0231929461%;
+  left: 81.7623733508%;
+  top: -0.8898794898%;
   -webkit-animation-delay: -0.4s;
           animation-delay: -0.4s;
 }
 .allstars .star5 {
   position: absolute;
-  left: 27.1030454962%;
-  top: -29.0842982222%;
+  left: 84.8632536648%;
+  top: 33.3886196583%;
   -webkit-animation-delay: -0.5s;
           animation-delay: -0.5s;
 }
 .allstars .star6 {
   position: absolute;
-  left: 21.9883778906%;
-  top: -27.0352946747%;
+  left: 77.3775779427%;
+  top: 30.5826265535%;
   -webkit-animation-delay: -0.6s;
           animation-delay: -0.6s;
 }
 .allstars .star7 {
   position: absolute;
-  left: 92.2356019992%;
-  top: 24.1787435559%;
+  left: 83.6132732282%;
+  top: 41.6913464609%;
   -webkit-animation-delay: -0.7s;
           animation-delay: -0.7s;
 }
 .allstars .star8 {
   position: absolute;
-  left: 18.3884087779%;
-  top: 27.8141189511%;
+  left: 85.8673802679%;
+  top: -16.550514308%;
   -webkit-animation-delay: -0.8s;
           animation-delay: -0.8s;
 }
 .allstars .star9 {
   position: absolute;
-  left: 87.5700444664%;
-  top: 45.4832906574%;
+  left: 58.4919815315%;
+  top: 6.1385762036%;
   -webkit-animation-delay: -0.9s;
           animation-delay: -0.9s;
 }
 .allstars .star10 {
   position: absolute;
-  left: 17.6200064037%;
-  top: 10.717311247%;
+  left: 16.9665851923%;
+  top: 35.1620374617%;
   -webkit-animation-delay: -1s;
           animation-delay: -1s;
 }
 .allstars .star11 {
   position: absolute;
-  left: 73.2132365038%;
-  top: 43.9964215927%;
+  left: 10.8593469506%;
+  top: 31.723420744%;
   -webkit-animation-delay: -1.1s;
           animation-delay: -1.1s;
 }
 .allstars .star12 {
   position: absolute;
-  left: 12.2405247147%;
-  top: 37.9265730127%;
+  left: 88.0957546504%;
+  top: 2.0943146841%;
   -webkit-animation-delay: -1.2s;
           animation-delay: -1.2s;
 }
 .allstars .star13 {
   position: absolute;
-  left: 42.8906703457%;
-  top: 43.7968492418%;
+  left: 87.4190511787%;
+  top: -25.0770646591%;
   -webkit-animation-delay: -1.3s;
           animation-delay: -1.3s;
 }
 .allstars .star14 {
   position: absolute;
-  left: 97.3946342816%;
-  top: 46.6191302832%;
+  left: 34.2718670544%;
+  top: -29.3929076496%;
   -webkit-animation-delay: -1.4s;
           animation-delay: -1.4s;
 }
 .allstars .star15 {
   position: absolute;
-  left: 80.6831224922%;
-  top: -5.2883688923%;
+  left: 0.8539995428%;
+  top: 0.6503492268%;
   -webkit-animation-delay: -1.5s;
           animation-delay: -1.5s;
 }
 .allstars .star16 {
   position: absolute;
-  left: 61.9792125428%;
-  top: 47.5093591577%;
+  left: 15.4303512292%;
+  top: 22.2958214397%;
   -webkit-animation-delay: -1.6s;
           animation-delay: -1.6s;
 }
 .allstars .star17 {
   position: absolute;
-  left: 36.6091881356%;
-  top: 33.5324636493%;
+  left: 20.7231933327%;
+  top: 19.6173803078%;
   -webkit-animation-delay: -1.7s;
           animation-delay: -1.7s;
 }
 .allstars .star18 {
   position: absolute;
-  left: 22.9257788474%;
-  top: -25.2706511615%;
+  left: 42.1919070497%;
+  top: 8.219731895%;
   -webkit-animation-delay: -1.8s;
           animation-delay: -1.8s;
 }
 .allstars .star19 {
   position: absolute;
-  left: 41.6775951665%;
-  top: 35.0882158875%;
+  left: 5.9352138256%;
+  top: 35.4188822835%;
   -webkit-animation-delay: -1.9s;
           animation-delay: -1.9s;
 }
 .allstars .star20 {
   position: absolute;
-  left: 55.0945384947%;
-  top: 38.3922574933%;
+  left: 97.1741305959%;
+  top: 18.2456192665%;
   -webkit-animation-delay: -2s;
           animation-delay: -2s;
 }
 .allstars .star21 {
   position: absolute;
-  left: 43.2146964757%;
-  top: 26.9119151831%;
+  left: 10.9440543031%;
+  top: -28.741907422%;
   -webkit-animation-delay: -2.1s;
           animation-delay: -2.1s;
 }
 .allstars .star22 {
   position: absolute;
-  left: 83.9334895497%;
-  top: 28.6439263453%;
+  left: 45.7023064182%;
+  top: 14.9261270729%;
   -webkit-animation-delay: -2.2s;
           animation-delay: -2.2s;
 }
 .allstars .star23 {
   position: absolute;
-  left: 33.9458184884%;
-  top: 39.6850756063%;
+  left: 72.9495754544%;
+  top: 47.7623687073%;
   -webkit-animation-delay: -2.3s;
           animation-delay: -2.3s;
 }
 .allstars .star24 {
   position: absolute;
-  left: 26.204390261%;
-  top: 14.3128902774%;
+  left: 88.4266012419%;
+  top: 18.7138448834%;
   -webkit-animation-delay: -2.4s;
           animation-delay: -2.4s;
 }
 .allstars .star25 {
   position: absolute;
-  left: 66.6148818227%;
-  top: -20.7504164811%;
+  left: 23.3364699272%;
+  top: 2.1498778585%;
   -webkit-animation-delay: -2.5s;
           animation-delay: -2.5s;
 }
 .allstars .star26 {
   position: absolute;
-  left: 84.8512469856%;
-  top: 6.7160749058%;
+  left: 3.9906089967%;
+  top: -29.1421294513%;
   -webkit-animation-delay: -2.6s;
           animation-delay: -2.6s;
 }
 .allstars .star27 {
   position: absolute;
-  left: 20.6082369465%;
-  top: 7.6207415197%;
+  left: 92.7043142961%;
+  top: -24.892675096%;
   -webkit-animation-delay: -2.7s;
           animation-delay: -2.7s;
 }
 .allstars .star28 {
   position: absolute;
-  left: 49.8217863531%;
-  top: -5.1465063019%;
+  left: 99.7636639851%;
+  top: -9.5364980487%;
   -webkit-animation-delay: -2.8s;
           animation-delay: -2.8s;
 }
 .allstars .star29 {
   position: absolute;
-  left: 83.6718261842%;
-  top: 26.1134840618%;
+  left: 63.9087047079%;
+  top: 34.2172053285%;
   -webkit-animation-delay: -2.9s;
           animation-delay: -2.9s;
 }
 .allstars .star30 {
   position: absolute;
-  left: 69.3292991408%;
-  top: -4.4533231209%;
+  left: 98.3406536013%;
+  top: 35.7955759789%;
   -webkit-animation-delay: -3s;
           animation-delay: -3s;
 }

@@ -16,4 +16,6 @@ GitHub:
 1. 實作CSS Selectors 根據連結關鍵字套用偽類icon。
 1. 自適應連結清單 navbar。
 1. 切換黑白風格按鈕。
-2. 添加進場動畫。(疑問紀錄，原先想用 `onload` 網頁載入時就判斷是否預設 `checked` 來套用 `class`，但失敗了。) 
+1. 添加進場動畫。~~(疑問紀錄，原先想用 `onload` 網頁載入時就判斷是否預設 `checked` 來套用 `class`，但失敗了。) ~~
+1. 找到 `:has()` CSS Selectors 就不用綁定JS監聽套用class了。`.top-nav:has(input[type=“checkbox”]:checked)` 
+1. `:is()` 能減少編譯指定父元素。

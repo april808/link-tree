@@ -17,13 +17,8 @@ $break_small: 480px
   @media screen and (max-width: $break_large)
     @content
     
-    
-    
 // --------
-$colorBg: linear-gradient(to top, rgba(lighten(lightSeaGreen,30),0.2) 0%, rgba(darken(lightSeaGreen,5),0.3) 100%), white
-
-
-$color_black: rgba(black,0.8)
+$color_black: rgb(15,15,15)
 $color_white: #cee8e6
 // --------
 @mixin size($w,$h:$w)
@@ -39,28 +34,19 @@ $color_white: #cee8e6
   position: absolute
   left: $l
   top: $t
-  
-*
-  // border: 1px solid #000
-  // box-sizing: border-box
 
 html,body
   font-family: Microsoft JhengHei
   margin: 0
   padding: 0
   background-color: rgba(black,0.8)
-  
-.wrap
-  position: relative
+    
 .top-nav 
   +flex
   flex-direction: column
   width: 100%
-  //background: $colorBg
   background: $color_white
-  transition: background 0.7s
   .top
-    // border: 1px solid #000
     position: relative
     +flex
     flex-direction: column
@@ -83,7 +69,6 @@ html,body
       border-radius: 50% 50% 0 0
       position: relative
       +flex
-      // background: linear-gradient(to top, rgba(lighten(lightSeaGreen,30),0.2) 0%, rgba(darken(lightSeaGreen,5),0.3) 100%), white
       background: $color_white
       background-size: 100% 200%
       background-position: 0 -30px
@@ -109,7 +94,7 @@ html,body
     .info
       position: absolute
       top: 65%
-      & h3,h5
+      :is(h3,h5)
         margin: 0
         padding: 0
         overflow: hidden
@@ -225,21 +210,42 @@ html,body
           &::after
             content: attr(web-name)
 // 切換成黑色
-.blackstyle
-  background: $color_black
-  .LinkList
-    background-color: rgba(white,0.7)
-    ul li a
-      // background: transparent
-      background: rgba(white,0.8)
-      color: #000
-      &:hover
-        color: rgba(white,0.8)
-        background: rgba(lightSeaGreen,0.7)
-        &::before
-          color: #fff
-      &:active
-        color: yellow
+.top-nav:has(input[type="checkbox"]:checked)
+    background: $color_black
+    .profile
+      background: $color_black
+    .info,.togglechk
+      color: $color_white
+    .LinkList
+      background-color: rgba(white,0.7)
+      li > a
+        // background: transparent
+        background: rgba(white,0.8)
+        color: #000
+        &:hover
+          color: rgba(white,0.8)
+          background: rgba(lightSeaGreen,0.7)
+          &::before
+            color: #fff
+        &:active
+          color: yellow
+        
+// .blackstyle
+//   background: $color_black
+//   .LinkList
+//     background-color: rgba(white,0.7)
+//     ul li a
+//       // background: transparent
+//       background: rgba(white,0.8)
+//       color: #000
+//       &:hover
+//         color: rgba(white,0.8)
+//         background: rgba(lightSeaGreen,0.7)
+//         &::before
+//           color: #fff
+//       &:active
+//         color: yellow
+        
 // 進場動畫
 @keyframes ani
   0%
@@ -249,13 +255,16 @@ html,body
     opacity: 1
     transform: translateY(0px) scale(1)
   
-.profile img
-  animation: ani 3s 1
-  transition-timing-function: ease-in
-  
-.togglechk
-  opacity: 1
-  transition: 1.8s
+.wrap
+  position: relative
+  :is(.top-nav ,.profile)
+    transition: background 0.7s
+  .profile > img
+    animation: ani 3s 1
+    transition-timing-function: ease-in
+  .togglechk
+    opacity: 1
+    transition: transform 1.8s
   
 .start-ani.LinkList ul > li
     & a
@@ -263,15 +272,12 @@ html,body
       transition-timing-function: ease-out
       transform: translateY(0px) scale(1)
       opacity: 1
-    
   
 .start-ani.LinkList ul > li
   @for $i from 1 through 8
     &:nth-child(#{$i})
       a
         transition-delay: $i*0.2+0.5s 
-    
-    
         
 .pre-rehearsal
   .top
@@ -282,10 +288,9 @@ html,body
       border-width: 18px
       background: gold
       border-radius: 50%
-    .info
-      & span
+    .info > span
         top: 1.2em
-  & .togglechk,.profile
+  :is(.togglechk,.profile)
     opacity: 0
     transform: translateY(80px) scale(0)
   & .profile:before
