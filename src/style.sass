@@ -40,6 +40,8 @@ html,body
   margin: 0
   padding: 0
   background-color: rgba(black,0.8)
+*
+  // border: 1px solid #fff
     
 .top-nav 
   +flex
@@ -62,12 +64,12 @@ html,body
       border: 0px solid gold
       transition: 3.5s
     .profile
+      position: relative
       top: 20px
       margin-top: -60px
       margin-bottom: 40px
       +size(700px,200px)
       border-radius: 50% 50% 0 0
-      position: relative
       +flex
       background: $color_white
       background-size: 100% 200%
@@ -82,7 +84,7 @@ html,body
         position: absolute
         top: 0
         transform: translate(0%,-50%)
-        border: 18px solid gold
+        border: 16px solid gold
         background: gold
         border-radius: 50%
       img
@@ -93,7 +95,10 @@ html,body
         +size(100px)
     .info
       position: absolute
-      top: 65%
+      height: inherit
+      bottom: -25px
+      // border: 1px solid white
+      margin-bottom: 45px
       :is(h3,h5)
         margin: 0
         padding: 0
@@ -163,7 +168,9 @@ html,body
             opacity: 0.9
             border-width: 3px
             color: rgba(black,0.8)
-            transform: scale(1.05)
+            transform: scale(1)
+            transition: transform 1s
+            transition-delay: 0.5s !important
             box-shadow: 0px 6px 10px rgba(black,0.3)
             &::before
               color: lightSeaGreen
@@ -197,6 +204,9 @@ html,body
           &[href*="instagram.com"]
             &::before
               content: "\f16d"
+          &[href*="youtube.com"]
+            &::before
+              content: "\f167"
           &[href*="live"]
             &::before
               display: inline-block
@@ -290,9 +300,11 @@ html,body
       border-radius: 50%
     .info > span
         top: 1.2em
-  :is(.togglechk,.profile)
+  .profile
     opacity: 0
     transform: translateY(80px) scale(0)
+  .togglechk
+    transform: translateY(80px) scale(0.03)
   & .profile:before
       opacity: 0
       transform: translateY(-80px)
@@ -333,3 +345,64 @@ html,body
       +abpos($poX,$poY)
       animation: 
         delay: $i*-0.1s
+      
+      
+:root
+  $toggle-0: 1
+  /*按鈕寬度*/
+  --button-width: 500px
+  /*按鈕高度*/
+  --button-height: 295px
+  /*裡面圓形直徑*/
+  --toggle-diameter: 255px
+  /*按鈕與裡面圓形之間的距離*/
+  --button-tiggle-offset: calc((var(--button-height) - var(--toggle-diameter)) / 2)
+  /*裡面圓形陰影的大小*/
+  --toggle-shadow-offset: 10px
+  /*裡面圓形在長按狀態下的寬度*/
+  --toggle-wider: 333px
+  /* color */
+  --color-grey: #E9E9EA
+  --color-dark-grey: #39393D
+  --color-green: #30D158
+
+// ----
+  
+.togglechk
+  transform: scale(0.1)
+  height: 45px
+  & span.toggle
+    display: inline-block
+    width: var(--button-width)
+    height: var(--button-height)
+    background-color: var(--color-grey)
+    border-radius: calc(var(--button-height) / 2)
+    position: relative
+    top: 0px
+    &::after
+      content: ''
+      display: inline-block
+      width: var(--toggle-diameter)
+      height: var(--toggle-diameter)
+      background-color: #fff
+      border-radius: calc(var(--toggle-diameter) / 2)
+      position: absolute
+      top: var(--button-tiggle-offset)
+      transform: translateX(var(--button-tiggle-offset))
+      box-shadow: var(--toggle-shadow-offset) 0 calc(var(--toggle-shadow-offset) * 4) rgba(black,10%)
+      transition: .3s all ease-in-out
+
+  input[type="checkbox"]:checked
+    & + span.toggle
+      background-color: var(--color-green)
+      &::after
+        transform: translateX(calc(var(--button-width) - var(--toggle-diameter) - var(--button-tiggle-offset)))
+        box-shadow: calc(var(--toggle-shadow-offset) * -1) 0 calc(var(--toggle-shadow-offset) * 4) rgba(black,10%)
+    &:active + span.toggle
+      &::after
+        transform: translateX(calc(var(--button-width) - var(--toggle-wider) - var(--button-tiggle-offset)))
+
+  input[type="checkbox"]
+    display: none
+    &:active + span.toggle::after
+        width: var(--toggle-wider)

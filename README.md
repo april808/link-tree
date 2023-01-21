@@ -19,3 +19,4 @@ GitHub:
 1. 添加進場動畫。~~(疑問紀錄，原先想用 `onload` 網頁載入時就判斷是否預設 `checked` 來套用 `class`，但失敗了。) ~~
 1. 找到 `:has()` CSS Selectors 就不用綁定JS監聽套用class了。`.top-nav:has(input[type=“checkbox”]:checked)` 
 1. `:is()` 能減少編譯指定父元素。
+2. 實作IOS切換按鈕。

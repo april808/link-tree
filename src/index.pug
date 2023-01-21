@@ -12,11 +12,13 @@
           span April808
         h5.other 
           span 還在前端學習的路上......
-      .togglechk
-        //- input#addcss(type="checkbox" onclick="toggleblack(this);", name="切換黑色")
-        //- input#addcss(type="checkbox" , name="切換黑色")
-        input#addcss(type="checkbox" , name="切換黑色" checked)
-        label(for="addcss") 切換
+        .togglechk
+          //- input#addcss(type="checkbox" onclick="toggleblack(this);", name="切換黑色")
+          //- input#addcss(type="checkbox" , name="切換黑色")
+          label(for="addcss")
+            input#addcss(type="checkbox" , name="切換黑色" checked)
+            //- | 切換
+            span.toggle
     .LinkList.start-ani
       ul
         li
@@ -30,6 +32,8 @@
           a(href="https://www.facebook.com" target="_blank" web-name="Facebook") 
         li
           a(href="https://www.instagram.com" target="_blank" web-name="Instagram") 
+        li
+          a(href="https://www.youtube.com" target="_blank" web-name="Youtube")
         li
           a(href="https://codepen.io/april808/live/MWBKqyv" target="_blank" web-name="April808") 
         //- hr

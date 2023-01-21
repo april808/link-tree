@@ -35,13 +35,13 @@ html, body {
   transition: 3.5s;
 }
 .top-nav .top .profile {
+  position: relative;
   top: 20px;
   margin-top: -60px;
   margin-bottom: 40px;
   width: 700px;
   height: 200px;
   border-radius: 50% 50% 0 0;
-  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -60,7 +60,7 @@ html, body {
   position: absolute;
   top: 0;
   transform: translate(0%, -50%);
-  border: 18px solid gold;
+  border: 16px solid gold;
   background: gold;
   border-radius: 50%;
 }
@@ -75,7 +75,9 @@ html, body {
 }
 .top-nav .top .info {
   position: absolute;
-  top: 65%;
+  height: inherit;
+  bottom: -25px;
+  margin-bottom: 45px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -164,7 +166,9 @@ html, body {
   opacity: 0.9;
   border-width: 3px;
   color: rgba(0, 0, 0, 0.8);
-  transform: scale(1.05);
+  transform: scale(1);
+  transition: transform 1s;
+  transition-delay: 0.5s !important;
   box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.3);
 }
 .top-nav .LinkList ul li a:hover::before {
@@ -201,6 +205,9 @@ html, body {
 }
 .top-nav .LinkList ul li a[href*="instagram.com"]::before {
   content: "";
+}
+.top-nav .LinkList ul li a[href*="youtube.com"]::before {
+  content: "";
 }
 .top-nav .LinkList ul li a[href*=live]::before {
   display: inline-block;
@@ -325,9 +332,12 @@ html, body {
 .pre-rehearsal .top .info > span {
   top: 1.2em;
 }
-.pre-rehearsal :is(.togglechk,.profile) {
+.pre-rehearsal .profile {
   opacity: 0;
   transform: translateY(80px) scale(0);
+}
+.pre-rehearsal .togglechk {
+  transform: translateY(80px) scale(0.03);
 }
 .pre-rehearsal .profile:before {
   opacity: 0;
@@ -385,211 +395,273 @@ html, body {
 }
 .allstars .star1 {
   position: absolute;
-  left: 30.0360484517%;
-  top: 37.6743647601%;
+  left: 34.4806087097%;
+  top: -26.6917770585%;
   -webkit-animation-delay: -0.1s;
           animation-delay: -0.1s;
 }
 .allstars .star2 {
   position: absolute;
-  left: 87.78058556%;
-  top: 25.6533860012%;
+  left: 25.237364167%;
+  top: -25.3550091694%;
   -webkit-animation-delay: -0.2s;
           animation-delay: -0.2s;
 }
 .allstars .star3 {
   position: absolute;
-  left: 54.7985418907%;
-  top: -7.708063759%;
+  left: 3.3123377327%;
+  top: -8.6666012045%;
   -webkit-animation-delay: -0.3s;
           animation-delay: -0.3s;
 }
 .allstars .star4 {
   position: absolute;
-  left: 81.7623733508%;
-  top: -0.8898794898%;
+  left: 44.5208245752%;
+  top: 12.1149481373%;
   -webkit-animation-delay: -0.4s;
           animation-delay: -0.4s;
 }
 .allstars .star5 {
   position: absolute;
-  left: 84.8632536648%;
-  top: 33.3886196583%;
+  left: 15.3758752901%;
+  top: 29.5152286868%;
   -webkit-animation-delay: -0.5s;
           animation-delay: -0.5s;
 }
 .allstars .star6 {
   position: absolute;
-  left: 77.3775779427%;
-  top: 30.5826265535%;
+  left: 9.4530848915%;
+  top: 1.4236399019%;
   -webkit-animation-delay: -0.6s;
           animation-delay: -0.6s;
 }
 .allstars .star7 {
   position: absolute;
-  left: 83.6132732282%;
-  top: 41.6913464609%;
+  left: 25.5861235619%;
+  top: -29.024823963%;
   -webkit-animation-delay: -0.7s;
           animation-delay: -0.7s;
 }
 .allstars .star8 {
   position: absolute;
-  left: 85.8673802679%;
-  top: -16.550514308%;
+  left: 21.0691648667%;
+  top: 30.1257903993%;
   -webkit-animation-delay: -0.8s;
           animation-delay: -0.8s;
 }
 .allstars .star9 {
   position: absolute;
-  left: 58.4919815315%;
-  top: 6.1385762036%;
+  left: 8.8857858311%;
+  top: -17.1842541536%;
   -webkit-animation-delay: -0.9s;
           animation-delay: -0.9s;
 }
 .allstars .star10 {
   position: absolute;
-  left: 16.9665851923%;
-  top: 35.1620374617%;
+  left: 72.1470491664%;
+  top: 39.646641836%;
   -webkit-animation-delay: -1s;
           animation-delay: -1s;
 }
 .allstars .star11 {
   position: absolute;
-  left: 10.8593469506%;
-  top: 31.723420744%;
+  left: 13.6219920125%;
+  top: 8.9785808954%;
   -webkit-animation-delay: -1.1s;
           animation-delay: -1.1s;
 }
 .allstars .star12 {
   position: absolute;
-  left: 88.0957546504%;
-  top: 2.0943146841%;
+  left: 73.0547726215%;
+  top: 41.3941294482%;
   -webkit-animation-delay: -1.2s;
           animation-delay: -1.2s;
 }
 .allstars .star13 {
   position: absolute;
-  left: 87.4190511787%;
-  top: -25.0770646591%;
+  left: 42.843802809%;
+  top: 2.3588364322%;
   -webkit-animation-delay: -1.3s;
           animation-delay: -1.3s;
 }
 .allstars .star14 {
   position: absolute;
-  left: 34.2718670544%;
-  top: -29.3929076496%;
+  left: 2.0222696702%;
+  top: 44.527633988%;
   -webkit-animation-delay: -1.4s;
           animation-delay: -1.4s;
 }
 .allstars .star15 {
   position: absolute;
-  left: 0.8539995428%;
-  top: 0.6503492268%;
+  left: 0.1217379729%;
+  top: 18.1766181473%;
   -webkit-animation-delay: -1.5s;
           animation-delay: -1.5s;
 }
 .allstars .star16 {
   position: absolute;
-  left: 15.4303512292%;
-  top: 22.2958214397%;
+  left: 28.5312908828%;
+  top: 42.4353915044%;
   -webkit-animation-delay: -1.6s;
           animation-delay: -1.6s;
 }
 .allstars .star17 {
   position: absolute;
-  left: 20.7231933327%;
-  top: 19.6173803078%;
+  left: 48.1339215253%;
+  top: 15.0952348702%;
   -webkit-animation-delay: -1.7s;
           animation-delay: -1.7s;
 }
 .allstars .star18 {
   position: absolute;
-  left: 42.1919070497%;
-  top: 8.219731895%;
+  left: 17.3080411954%;
+  top: -7.003408162%;
   -webkit-animation-delay: -1.8s;
           animation-delay: -1.8s;
 }
 .allstars .star19 {
   position: absolute;
-  left: 5.9352138256%;
-  top: 35.4188822835%;
+  left: 84.6040696593%;
+  top: 38.8732575226%;
   -webkit-animation-delay: -1.9s;
           animation-delay: -1.9s;
 }
 .allstars .star20 {
   position: absolute;
-  left: 97.1741305959%;
-  top: 18.2456192665%;
+  left: 19.9871685382%;
+  top: 16.9328667628%;
   -webkit-animation-delay: -2s;
           animation-delay: -2s;
 }
 .allstars .star21 {
   position: absolute;
-  left: 10.9440543031%;
-  top: -28.741907422%;
+  left: 99.1116608575%;
+  top: 26.5604839252%;
   -webkit-animation-delay: -2.1s;
           animation-delay: -2.1s;
 }
 .allstars .star22 {
   position: absolute;
-  left: 45.7023064182%;
-  top: 14.9261270729%;
+  left: 81.6627290834%;
+  top: 42.7656237135%;
   -webkit-animation-delay: -2.2s;
           animation-delay: -2.2s;
 }
 .allstars .star23 {
   position: absolute;
-  left: 72.9495754544%;
-  top: 47.7623687073%;
+  left: 20.2438114752%;
+  top: 40.7509370132%;
   -webkit-animation-delay: -2.3s;
           animation-delay: -2.3s;
 }
 .allstars .star24 {
   position: absolute;
-  left: 88.4266012419%;
-  top: 18.7138448834%;
+  left: 16.3812484521%;
+  top: 39.575530284%;
   -webkit-animation-delay: -2.4s;
           animation-delay: -2.4s;
 }
 .allstars .star25 {
   position: absolute;
-  left: 23.3364699272%;
-  top: 2.1498778585%;
+  left: 89.4601369302%;
+  top: -12.675340915%;
   -webkit-animation-delay: -2.5s;
           animation-delay: -2.5s;
 }
 .allstars .star26 {
   position: absolute;
-  left: 3.9906089967%;
-  top: -29.1421294513%;
+  left: 79.0753880389%;
+  top: 18.8625445643%;
   -webkit-animation-delay: -2.6s;
           animation-delay: -2.6s;
 }
 .allstars .star27 {
   position: absolute;
-  left: 92.7043142961%;
-  top: -24.892675096%;
+  left: 58.9183122736%;
+  top: 23.4181105013%;
   -webkit-animation-delay: -2.7s;
           animation-delay: -2.7s;
 }
 .allstars .star28 {
   position: absolute;
-  left: 99.7636639851%;
-  top: -9.5364980487%;
+  left: 32.8543385853%;
+  top: -27.5045628165%;
   -webkit-animation-delay: -2.8s;
           animation-delay: -2.8s;
 }
 .allstars .star29 {
   position: absolute;
-  left: 63.9087047079%;
-  top: 34.2172053285%;
+  left: 95.7061312192%;
+  top: -28.0177281151%;
   -webkit-animation-delay: -2.9s;
           animation-delay: -2.9s;
 }
 .allstars .star30 {
   position: absolute;
-  left: 98.3406536013%;
-  top: 35.7955759789%;
+  left: 22.2723656467%;
+  top: -14.4803268108%;
   -webkit-animation-delay: -3s;
           animation-delay: -3s;
+}
+
+:root {
+  /*按鈕寬度*/
+  --button-width: 500px;
+  /*按鈕高度*/
+  --button-height: 295px;
+  /*裡面圓形直徑*/
+  --toggle-diameter: 255px;
+  /*按鈕與裡面圓形之間的距離*/
+  --button-tiggle-offset: calc((var(--button-height) - var(--toggle-diameter)) / 2);
+  /*裡面圓形陰影的大小*/
+  --toggle-shadow-offset: 10px;
+  /*裡面圓形在長按狀態下的寬度*/
+  --toggle-wider: 333px;
+  /* color */
+  --color-grey: #E9E9EA;
+  --color-dark-grey: #39393D;
+  --color-green: #30D158;
+}
+
+.togglechk {
+  transform: scale(0.1);
+  height: 45px;
+}
+.togglechk span.toggle {
+  display: inline-block;
+  width: var(--button-width);
+  height: var(--button-height);
+  background-color: var(--color-grey);
+  border-radius: calc(var(--button-height) / 2);
+  position: relative;
+  top: 0px;
+}
+.togglechk span.toggle::after {
+  content: "";
+  display: inline-block;
+  width: var(--toggle-diameter);
+  height: var(--toggle-diameter);
+  background-color: #fff;
+  border-radius: calc(var(--toggle-diameter) / 2);
+  position: absolute;
+  top: var(--button-tiggle-offset);
+  transform: translateX(var(--button-tiggle-offset));
+  box-shadow: var(--toggle-shadow-offset) 0 calc(var(--toggle-shadow-offset) * 4) rgba(0, 0, 0, 0.1);
+  transition: 0.3s all ease-in-out;
+}
+.togglechk input[type=checkbox]:checked + span.toggle {
+  background-color: var(--color-green);
+}
+.togglechk input[type=checkbox]:checked + span.toggle::after {
+  transform: translateX(calc(var(--button-width) - var(--toggle-diameter) - var(--button-tiggle-offset)));
+  box-shadow: calc(var(--toggle-shadow-offset) * -1) 0 calc(var(--toggle-shadow-offset) * 4) rgba(0, 0, 0, 0.1);
+}
+.togglechk input[type=checkbox]:checked:active + span.toggle::after {
+  transform: translateX(calc(var(--button-width) - var(--toggle-wider) - var(--button-tiggle-offset)));
+}
+.togglechk input[type=checkbox] {
+  display: none;
+}
+.togglechk input[type=checkbox]:active + span.toggle::after {
+  width: var(--toggle-wider);
 }
