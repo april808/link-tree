@@ -12,11 +12,9 @@
           span April808
         h5.other 
           span 還在前端學習的路上......
-      .togglechk
-        //- input#addcss(type="checkbox" onclick="toggleblack(this);", name="切換黑色")
-        //- input#addcss(type="checkbox" , name="切換黑色")
-        input#addcss(type="checkbox" , name="切換黑色" checked)
-        label(for="addcss") 切換
+      .togglechk.form-check.form-switch
+        label(for="addcss") 
+        input.form-check-input#addcss(type="checkbox" , name="切換黑色" checked)
     .LinkList.start-ani
       ul
         li

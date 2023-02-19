@@ -18,4 +18,4 @@ setTimeout(function () {
 }, 800);/*拿掉隱藏用CSS*/
 setTimeout(function () {
     document.querySelector(".LinkList").classList.remove("start-ani");
-}, 7000);/*拿掉延遲用CSS*/
+}, 3500);/*拿掉延遲用CSS*/
