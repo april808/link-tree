@@ -1,4 +1,4 @@
-# Link tree(模仿實作)
+# Link tree
 
 預覽：
 
