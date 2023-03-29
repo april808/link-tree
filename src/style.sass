@@ -95,7 +95,7 @@ html,body
       bottom: -25px
       // border: 1px solid white
       margin-bottom: 45px
-      :is(h3,h5)
+      h3,h5
         margin: 0
         padding: 0
         overflow: hidden
@@ -105,10 +105,10 @@ html,body
       & h5 
         font-weight: normal
         font-size: 18px
-      & span 
-          position: relative
-          top: 0px
-          transition: top 3s
+      & span
+        position: relative
+        top: 0px
+        transition: top 1s
       +flex
       flex-direction: column
 
@@ -226,6 +226,7 @@ html,body
         border-color: darken(gold,5)
     .info,.togglechk
       color: $color_white
+    
     .linkList
       background-color: rgba(white,0.7)
       li > a
@@ -302,8 +303,8 @@ html,body
       background: gold
       border-radius: 50%
       opacity: 0
-    .info > span
-        top: 1.2em
+    .info span
+      top: 1.2em
   .profile
     opacity: 0
     transform: translateY(80px) scale(0)
@@ -312,7 +313,6 @@ html,body
   & .profile::before
       opacity: 0
       transform: translateY(-80px)
-      
   & .linkList ul > li
     & a
         transform: translateY(30px) scale(0)
