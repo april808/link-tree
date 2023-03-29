@@ -32,7 +32,7 @@ html, body {
   width: inherit;
   height: 260px;
   border: 0px solid gold;
-  transition: 3.5s;
+  opacity: 1;
 }
 .top-nav .top .profile {
   position: relative;
@@ -51,15 +51,13 @@ html, body {
 }
 .top-nav .top .profile:before {
   opacity: 1;
-  transition: 0.7s;
-  transform: translateY(0px) scale(1);
+  transform: translateY(-50%) scale(1);
   content: "";
   display: block;
   width: 100px;
   height: 100px;
   position: absolute;
   top: 0;
-  transform: translate(0%, -50%);
   border: 16px solid gold;
   background: gold;
   border-radius: 50%;
@@ -102,18 +100,18 @@ html, body {
   transition: top 3s;
 }
 
-.top-nav .LinkList {
+.top-nav .linkList {
   width: inherit;
   box-sizing: border-box;
   padding: 10px 30px;
   transition: background 0.7s;
 }
 @media screen and (max-width: 768px) {
-  .top-nav .LinkList {
+  .top-nav .linkList {
     padding: 10px 0px;
   }
 }
-.top-nav .LinkList ul {
+.top-nav .linkList ul {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -122,29 +120,29 @@ html, body {
   list-style-type: none;
 }
 @media screen and (max-width: 768px) {
-  .top-nav .LinkList ul {
+  .top-nav .linkList ul {
     flex-direction: column;
   }
 }
-.top-nav .LinkList ul li {
+.top-nav .linkList ul li {
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 0 5px;
 }
 @media screen and (max-width: 768px) {
-  .top-nav .LinkList ul li {
+  .top-nav .linkList ul li {
     min-width: 500px;
     margin-bottom: 3px;
     width: calc(80% - 30px);
   }
 }
 @media screen and (max-width: 480px) {
-  .top-nav .LinkList ul li {
+  .top-nav .linkList ul li {
     min-width: 300px;
   }
 }
-.top-nav .LinkList ul li a {
+.top-nav .linkList ul li a {
   text-decoration: none;
   width: 100%;
   flex: 1;
@@ -156,29 +154,27 @@ html, body {
   border-radius: 8px;
   margin-bottom: 5px;
   box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.3);
-  transition: background 0.5s, color 0.5s, border 0.5s, transform 0.5s;
+  transition: background 0.5s, color 0.5s, border 0.5s, transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
-.top-nav .LinkList ul li a i {
+.top-nav .linkList ul li a i {
   margin-right: 10px;
 }
-.top-nav .LinkList ul li a:hover {
+.top-nav .linkList ul li a:hover {
   background-color: white;
   opacity: 0.9;
   border-width: 3px;
   color: rgba(0, 0, 0, 0.8);
-  transform: scale(1);
-  transition: transform 1s;
-  transition-delay: 0.5s !important;
+  transform: scale(1.05);
   box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.3);
 }
-.top-nav .LinkList ul li a:hover::before {
+.top-nav .linkList ul li a:hover::before {
   color: lightSeaGreen;
 }
-.top-nav .LinkList ul li a:active {
+.top-nav .linkList ul li a:active {
   color: yellow;
   transform: scale(0.9);
 }
-.top-nav .LinkList ul li a::before {
+.top-nav .linkList ul li a::before {
   display: inline-block;
   font-style: normal;
   font-variant: normal;
@@ -191,25 +187,25 @@ html, body {
   text-align: center;
   margin-right: 10px;
 }
-.top-nav .LinkList ul li a[href*="codepen.io"]::before {
+.top-nav .linkList ul li a[href*="codepen.io"]::before {
   content: "";
 }
-.top-nav .LinkList ul li a[href*="github.com"]::before {
+.top-nav .linkList ul li a[href*="github.com"]::before {
   content: "";
 }
-.top-nav .LinkList ul li a[href*="twitter.com"]::before {
+.top-nav .linkList ul li a[href*="twitter.com"]::before {
   content: "";
 }
-.top-nav .LinkList ul li a[href*="facebook.com"]::before {
+.top-nav .linkList ul li a[href*="facebook.com"]::before {
   content: "";
 }
-.top-nav .LinkList ul li a[href*="instagram.com"]::before {
+.top-nav .linkList ul li a[href*="instagram.com"]::before {
   content: "";
 }
-.top-nav .LinkList ul li a[href*="youtube.com"]::before {
+.top-nav .linkList ul li a[href*="youtube.com"]::before {
   content: "";
 }
-.top-nav .LinkList ul li a[href*=live]::before {
+.top-nav .linkList ul li a[href*=live]::before {
   display: inline-block;
   content: "";
   background-image: url("https://april808.github.io/blog_website/assets/image/logo/MyLogo.vectornator1.svg");
@@ -220,34 +216,40 @@ html, body {
   vertical-align: middle;
   transform: translateY(-2px);
 }
-.top-nav .LinkList ul li a::after {
+.top-nav .linkList ul li a::after {
   content: attr(web-name);
 }
 
 .top-nav:has(input[type=checkbox]:checked) {
   background: #0f0f0f;
 }
+.top-nav:has(input[type=checkbox]:checked) .cover {
+  opacity: 0.7;
+}
 .top-nav:has(input[type=checkbox]:checked) .profile {
   background: #0f0f0f;
+}
+.top-nav:has(input[type=checkbox]:checked) .profile::before {
+  border-color: #e6c200;
 }
 .top-nav:has(input[type=checkbox]:checked) .info, .top-nav:has(input[type=checkbox]:checked) .togglechk {
   color: #cee8e6;
 }
-.top-nav:has(input[type=checkbox]:checked) .LinkList {
+.top-nav:has(input[type=checkbox]:checked) .linkList {
   background-color: rgba(255, 255, 255, 0.7);
 }
-.top-nav:has(input[type=checkbox]:checked) .LinkList li > a {
+.top-nav:has(input[type=checkbox]:checked) .linkList li > a {
   background: rgba(255, 255, 255, 0.8);
   color: #000;
 }
-.top-nav:has(input[type=checkbox]:checked) .LinkList li > a:hover {
+.top-nav:has(input[type=checkbox]:checked) .linkList li > a:hover {
   color: rgba(255, 255, 255, 0.8);
   background: rgba(32, 178, 170, 0.7);
 }
-.top-nav:has(input[type=checkbox]:checked) .LinkList li > a:hover::before {
+.top-nav:has(input[type=checkbox]:checked) .linkList li > a:hover::before {
   color: #fff;
 }
-.top-nav:has(input[type=checkbox]:checked) .LinkList li > a:active {
+.top-nav:has(input[type=checkbox]:checked) .linkList li > a:active {
   color: yellow;
 }
 
@@ -275,48 +277,53 @@ html, body {
 .wrap {
   position: relative;
 }
+.wrap .cover {
+  transition: 3.5s, opacity 3.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
 .wrap :is(.top-nav ,.profile) {
-  transition: background 0.7s;
+  transition: background 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 .wrap .profile > img {
-  -webkit-animation: ani 3s 1;
-          animation: ani 3s 1;
-  transition-timing-function: ease-in;
+  -webkit-animation: ani 3s 1 cubic-bezier(0.34, 1.56, 0.64, 1);
+          animation: ani 3s 1 cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.wrap .profile::before {
+  transition: transform 1.8s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 .wrap .togglechk {
   opacity: 1;
-  transition: transform 1.8s;
+  transition: transform 1.8s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-.start-ani.LinkList ul > li a {
+.start-ani.linkList ul > li a {
   transition: 1s;
-  transition-timing-function: ease-out;
+  transition-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);
   transform: translateY(0px) scale(1);
   opacity: 1;
 }
 
-.start-ani.LinkList ul > li:nth-child(1) a {
+.start-ani.linkList ul > li:nth-child(1) a {
   transition-delay: 0.7s;
 }
-.start-ani.LinkList ul > li:nth-child(2) a {
+.start-ani.linkList ul > li:nth-child(2) a {
   transition-delay: 0.9s;
 }
-.start-ani.LinkList ul > li:nth-child(3) a {
+.start-ani.linkList ul > li:nth-child(3) a {
   transition-delay: 1.1s;
 }
-.start-ani.LinkList ul > li:nth-child(4) a {
+.start-ani.linkList ul > li:nth-child(4) a {
   transition-delay: 1.3s;
 }
-.start-ani.LinkList ul > li:nth-child(5) a {
+.start-ani.linkList ul > li:nth-child(5) a {
   transition-delay: 1.5s;
 }
-.start-ani.LinkList ul > li:nth-child(6) a {
+.start-ani.linkList ul > li:nth-child(6) a {
   transition-delay: 1.7s;
 }
-.start-ani.LinkList ul > li:nth-child(7) a {
+.start-ani.linkList ul > li:nth-child(7) a {
   transition-delay: 1.9s;
 }
-.start-ani.LinkList ul > li:nth-child(8) a {
+.start-ani.linkList ul > li:nth-child(8) a {
   transition-delay: 2.1s;
 }
 
@@ -328,6 +335,7 @@ html, body {
   border-width: 18px;
   background: gold;
   border-radius: 50%;
+  opacity: 0;
 }
 .pre-rehearsal .top .info > span {
   top: 1.2em;
@@ -339,11 +347,11 @@ html, body {
 .pre-rehearsal .togglechk {
   transform: translateY(80px) scale(0.03);
 }
-.pre-rehearsal .profile:before {
+.pre-rehearsal .profile::before {
   opacity: 0;
   transform: translateY(-80px);
 }
-.pre-rehearsal .LinkList ul > li a {
+.pre-rehearsal .linkList ul > li a {
   transform: translateY(30px) scale(0);
 }
 
@@ -395,211 +403,211 @@ html, body {
 }
 .allstars .star1 {
   position: absolute;
-  left: 34.4806087097%;
-  top: -26.6917770585%;
+  left: 8.1588441239%;
+  top: 20.9921696851%;
   -webkit-animation-delay: -0.1s;
           animation-delay: -0.1s;
 }
 .allstars .star2 {
   position: absolute;
-  left: 25.237364167%;
-  top: -25.3550091694%;
+  left: 97.6274994667%;
+  top: 8.3265129295%;
   -webkit-animation-delay: -0.2s;
           animation-delay: -0.2s;
 }
 .allstars .star3 {
   position: absolute;
-  left: 3.3123377327%;
-  top: -8.6666012045%;
+  left: 6.7626918163%;
+  top: 37.0239336208%;
   -webkit-animation-delay: -0.3s;
           animation-delay: -0.3s;
 }
 .allstars .star4 {
   position: absolute;
-  left: 44.5208245752%;
-  top: 12.1149481373%;
+  left: 60.0940283376%;
+  top: -8.4167242278%;
   -webkit-animation-delay: -0.4s;
           animation-delay: -0.4s;
 }
 .allstars .star5 {
   position: absolute;
-  left: 15.3758752901%;
-  top: 29.5152286868%;
+  left: 37.9626000538%;
+  top: 16.0202686522%;
   -webkit-animation-delay: -0.5s;
           animation-delay: -0.5s;
 }
 .allstars .star6 {
   position: absolute;
-  left: 9.4530848915%;
-  top: 1.4236399019%;
+  left: 36.9996027838%;
+  top: -12.7531653158%;
   -webkit-animation-delay: -0.6s;
           animation-delay: -0.6s;
 }
 .allstars .star7 {
   position: absolute;
-  left: 25.5861235619%;
-  top: -29.024823963%;
+  left: 96.2812770319%;
+  top: -9.7902702891%;
   -webkit-animation-delay: -0.7s;
           animation-delay: -0.7s;
 }
 .allstars .star8 {
   position: absolute;
-  left: 21.0691648667%;
-  top: 30.1257903993%;
+  left: 13.1645393462%;
+  top: 38.1021599244%;
   -webkit-animation-delay: -0.8s;
           animation-delay: -0.8s;
 }
 .allstars .star9 {
   position: absolute;
-  left: 8.8857858311%;
-  top: -17.1842541536%;
+  left: 20.4742786465%;
+  top: 40.9335317001%;
   -webkit-animation-delay: -0.9s;
           animation-delay: -0.9s;
 }
 .allstars .star10 {
   position: absolute;
-  left: 72.1470491664%;
-  top: 39.646641836%;
+  left: 67.4149838792%;
+  top: 9.0578038283%;
   -webkit-animation-delay: -1s;
           animation-delay: -1s;
 }
 .allstars .star11 {
   position: absolute;
-  left: 13.6219920125%;
-  top: 8.9785808954%;
+  left: 32.051896345%;
+  top: 41.7410186245%;
   -webkit-animation-delay: -1.1s;
           animation-delay: -1.1s;
 }
 .allstars .star12 {
   position: absolute;
-  left: 73.0547726215%;
-  top: 41.3941294482%;
+  left: 19.9089448057%;
+  top: 45.6794260412%;
   -webkit-animation-delay: -1.2s;
           animation-delay: -1.2s;
 }
 .allstars .star13 {
   position: absolute;
-  left: 42.843802809%;
-  top: 2.3588364322%;
+  left: 0.8477740025%;
+  top: 2.3559657004%;
   -webkit-animation-delay: -1.3s;
           animation-delay: -1.3s;
 }
 .allstars .star14 {
   position: absolute;
-  left: 2.0222696702%;
-  top: 44.527633988%;
+  left: 80.809785571%;
+  top: 17.485765207%;
   -webkit-animation-delay: -1.4s;
           animation-delay: -1.4s;
 }
 .allstars .star15 {
   position: absolute;
-  left: 0.1217379729%;
-  top: 18.1766181473%;
+  left: 72.3655832359%;
+  top: 29.2343218797%;
   -webkit-animation-delay: -1.5s;
           animation-delay: -1.5s;
 }
 .allstars .star16 {
   position: absolute;
-  left: 28.5312908828%;
-  top: 42.4353915044%;
+  left: 87.8709292843%;
+  top: -20.0680711134%;
   -webkit-animation-delay: -1.6s;
           animation-delay: -1.6s;
 }
 .allstars .star17 {
   position: absolute;
-  left: 48.1339215253%;
-  top: 15.0952348702%;
+  left: 70.3437924407%;
+  top: 33.5405490706%;
   -webkit-animation-delay: -1.7s;
           animation-delay: -1.7s;
 }
 .allstars .star18 {
   position: absolute;
-  left: 17.3080411954%;
-  top: -7.003408162%;
+  left: 30.030155053%;
+  top: 2.9917398051%;
   -webkit-animation-delay: -1.8s;
           animation-delay: -1.8s;
 }
 .allstars .star19 {
   position: absolute;
-  left: 84.6040696593%;
-  top: 38.8732575226%;
+  left: 19.1089720449%;
+  top: 30.5039251245%;
   -webkit-animation-delay: -1.9s;
           animation-delay: -1.9s;
 }
 .allstars .star20 {
   position: absolute;
-  left: 19.9871685382%;
-  top: 16.9328667628%;
+  left: 43.1267421127%;
+  top: 12.9368996151%;
   -webkit-animation-delay: -2s;
           animation-delay: -2s;
 }
 .allstars .star21 {
   position: absolute;
-  left: 99.1116608575%;
-  top: 26.5604839252%;
+  left: 87.0882964616%;
+  top: 39.836032345%;
   -webkit-animation-delay: -2.1s;
           animation-delay: -2.1s;
 }
 .allstars .star22 {
   position: absolute;
-  left: 81.6627290834%;
-  top: 42.7656237135%;
+  left: 92.3033508906%;
+  top: -9.0464887451%;
   -webkit-animation-delay: -2.2s;
           animation-delay: -2.2s;
 }
 .allstars .star23 {
   position: absolute;
-  left: 20.2438114752%;
-  top: 40.7509370132%;
+  left: 25.8499688079%;
+  top: 46.1289990086%;
   -webkit-animation-delay: -2.3s;
           animation-delay: -2.3s;
 }
 .allstars .star24 {
   position: absolute;
-  left: 16.3812484521%;
-  top: 39.575530284%;
+  left: 91.9120961229%;
+  top: 27.3989430197%;
   -webkit-animation-delay: -2.4s;
           animation-delay: -2.4s;
 }
 .allstars .star25 {
   position: absolute;
-  left: 89.4601369302%;
-  top: -12.675340915%;
+  left: 31.1410057994%;
+  top: -28.5688828579%;
   -webkit-animation-delay: -2.5s;
           animation-delay: -2.5s;
 }
 .allstars .star26 {
   position: absolute;
-  left: 79.0753880389%;
-  top: 18.8625445643%;
+  left: 99.3516404838%;
+  top: 44.0065023807%;
   -webkit-animation-delay: -2.6s;
           animation-delay: -2.6s;
 }
 .allstars .star27 {
   position: absolute;
-  left: 58.9183122736%;
-  top: 23.4181105013%;
+  left: 40.1327994212%;
+  top: -2.681358426%;
   -webkit-animation-delay: -2.7s;
           animation-delay: -2.7s;
 }
 .allstars .star28 {
   position: absolute;
-  left: 32.8543385853%;
-  top: -27.5045628165%;
+  left: 95.5532267033%;
+  top: 22.2627127335%;
   -webkit-animation-delay: -2.8s;
           animation-delay: -2.8s;
 }
 .allstars .star29 {
   position: absolute;
-  left: 95.7061312192%;
-  top: -28.0177281151%;
+  left: 44.2142659162%;
+  top: -21.888655757%;
   -webkit-animation-delay: -2.9s;
           animation-delay: -2.9s;
 }
 .allstars .star30 {
   position: absolute;
-  left: 22.2723656467%;
-  top: -14.4803268108%;
+  left: 86.5740434259%;
+  top: 24.8165402259%;
   -webkit-animation-delay: -3s;
           animation-delay: -3s;
 }

@@ -17,5 +17,5 @@ setTimeout(function () {
     document.querySelector(".top-nav").classList.remove("pre-rehearsal");
 }, 800);/*拿掉隱藏用CSS*/
 setTimeout(function () {
-    document.querySelector(".LinkList").classList.remove("start-ani");
+    document.querySelector(".linkList").classList.remove("start-ani");
 }, 3500);/*拿掉延遲用CSS*/
